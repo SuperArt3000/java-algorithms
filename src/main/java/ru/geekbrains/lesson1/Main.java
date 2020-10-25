@@ -14,10 +14,10 @@ public class Main {
         return i;
     }
 
-    public static boolean isEqualsFive(int... ints) {
+    public static boolean isEquals(int... ints) {
         lastTime = System.nanoTime();
         for (int i : ints) {
-            if (i == 5)
+            if (i == 11)
                 return true;
         }
         return false;
@@ -44,7 +44,7 @@ public class Main {
         System.out.println(primitive);
         System.out.println(reference);
 
-        System.out.println(isEqualsFive(main.getI(), primitive, reference));
+        System.out.println(isEquals(main.getI(), primitive, reference));
         System.out.println((System.nanoTime() - lastTime) * 0.000000001F);
     }
 }
