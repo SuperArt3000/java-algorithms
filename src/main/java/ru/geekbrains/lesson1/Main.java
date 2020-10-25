@@ -24,6 +24,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         /* Задание 1.1
         Приведите пример алгоритмов и структур данных из жизни.
         Задание 1.2
@@ -44,8 +45,6 @@ public class Main {
         System.out.println(reference);
 
         System.out.println(isEqualsFive(main.getI(), primitive, reference));
-        long currentTime = System.nanoTime();
-        float time = (currentTime - lastTime) * 0.000000001f;
-        System.out.println(time);
+        System.out.println((System.nanoTime() - lastTime) * 0.000000001F);
     }
 }
