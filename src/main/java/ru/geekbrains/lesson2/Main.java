@@ -49,7 +49,7 @@ public class Main {
         float selectionSortTime = selectionSort(secondArray);
         float insertSortTime = insertSort(secondArray);
 
-        System.out.println("\nmethodSort() " + (methodSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
+        System.out.println("methodSort() " + (methodSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
         System.out.println("selectionSort() " + (selectionSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
         System.out.println("selectionSort() " + (selectionSortTime > methodSortTime ? "slower" : "faster") + " methodSort()");
         System.out.println("insertSort() " + (insertSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
@@ -60,32 +60,32 @@ public class Main {
     public static void findTimes(int[] array) {
         start = System.nanoTime();
         int[] newInts = Arrays.copyOf(array, array.length);
-        System.out.println("\nnewInts = Arrays.copyOf(array, array.length) = " + (System.nanoTime() - start) + "\n");
+        System.out.println("newInts = Arrays.copyOf(array, array.length) = " + (System.nanoTime() - start));
 
         start = System.nanoTime();
         System.out.print(Arrays.toString(array));
-        System.out.println(" - Arrays.toString(array) = " + (System.nanoTime() - start) + "\n");
+        System.out.println(" - Arrays.toString(array) = " + (System.nanoTime() - start));
 
         start = System.nanoTime();
         Arrays.sort(array);
         finish = (System.nanoTime() - start);
         System.out.print(Arrays.toString(array));
-        System.out.println(" - Arrays.sort(array) = " + (System.nanoTime() - start) + "\n");
+        System.out.println(" - Arrays.sort(array) = " + (System.nanoTime() - start));
 
         start = System.nanoTime();
         System.out.print(Arrays.binarySearch(array, 154) >= 0 ? "true" : "false");
-        System.out.println(" - Arrays.binarySearch(array, 3) = " + (System.nanoTime() - start) + "\n");
+        System.out.println(" - Arrays.binarySearch(array, 3) = " + (System.nanoTime() - start));
 
         start = System.nanoTime();
         System.out.print(Arrays.equals(array, newInts) ? "true" : "false");
-        System.out.println(" - Arrays.equals(array, newInts) = " + (System.nanoTime() - start) + "\n");
+        System.out.println(" - Arrays.equals(array, newInts) = " + (System.nanoTime() - start));
     }
 
     public static boolean linearSearch(int[] array, int a) {
         start = System.nanoTime();
         for (int j : array) {
             if (j == a) {
-                System.out.println("linearSearch(int[] array, int a) = " + (System.nanoTime() - start) * 0.000000001F + "\n");
+                System.out.println("linearSearch(int[] array, int a) = " + (System.nanoTime() - start) * 0.000000001F);
                 return true;
             }
         }
@@ -115,7 +115,7 @@ public class Main {
         start = System.nanoTime();
         Arrays.sort(integers);
         finish = (System.nanoTime() - start);
-        System.out.println("\nmethodSort result: " + Arrays.toString(integers));
+        System.out.println("methodSort result: " + Arrays.toString(integers));
         System.out.println("methodSort = " + (System.nanoTime() - finish) * 0.000000001F);
         return finish;
     }
@@ -131,7 +131,7 @@ public class Main {
             }
         }
         finish = (System.nanoTime() - start);
-        System.out.println("\nbubbleSort result: " + Arrays.toString(cloneArray));
+        System.out.println("bubbleSort result: " + Arrays.toString(cloneArray));
         System.out.println("bubbleSort = " + finish * 0.000000001F);
         return finish;
     }
@@ -155,7 +155,7 @@ public class Main {
             swap(integers, i, min);
         }
         finish = (System.nanoTime() - start);
-        System.out.println("\nselectionSort result: " + Arrays.toString(integers));
+        System.out.println("selectionSort result: " + Arrays.toString(integers));
         System.out.println("selectionSort = " + finish);
         return finish;
     }
@@ -175,7 +175,7 @@ public class Main {
             integers[in] = buff;
         }
         finish = (System.nanoTime() - start);
-        System.out.println("\ninsertSort result: " + Arrays.toString(integers));
+        System.out.println("insertSort result: " + Arrays.toString(integers));
         System.out.println("insertSort = " + finish);
         return finish;
     }
