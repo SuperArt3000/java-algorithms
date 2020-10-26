@@ -83,8 +83,8 @@ public class Main {
 
     public static boolean linearSearch(int[] array, int a) {
         start = System.nanoTime();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == a) {
+        for (int j : array) {
+            if (j == a) {
                 System.out.println("linearSearch(int[] array, int a) = " + (System.nanoTime() - start) * 0.000000001F + "\n");
                 return true;
             }
@@ -184,7 +184,7 @@ public class Main {
         Random random = new Random();
         int[] array = new int[n];
         for (int i = 0; i < array.length - 1; i++) {
-            array[i] = random.nextInt(400);
+            array[i] = random.nextInt(n);
         }
         return array;
     }
