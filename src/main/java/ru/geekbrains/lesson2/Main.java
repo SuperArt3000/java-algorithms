@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-    private static long start;
-    private static long finish;
-
     public static void main(String[] args) {
 
         /* Задание 2.1
@@ -18,7 +15,6 @@ public class Main {
         Оценить алгоритмы линейного и двоичного поиска с помощью базового класса System.nanoTime(),
         при необходимости расширьте уже существующий массив данных.
         Задание 2.3
-
         Создайте массив размером 400 элементов.
         Выполните сортировку с помощью метода sort().
         Оцените сортировку с помощью базового класса System.nanoTime().
@@ -35,157 +31,133 @@ public class Main {
         Оцените сортировку с помощью базового класса System.nanoTime().
         Сравните с временем выполнения алгоритмов сортировки из прошлых заданий 2.3, 2.4 и 2.5. */
 
-        int[] firstArray = {11, 22, 41, 154, 3, 8, 9, 30};
+        long lastTime;
+        long bubbleSortTime;
+        long insertionSortTime;
+        long selectionSortTime;
+        long methodSortTime;
+        long linearSearchTime;
+        long binarySearchTime;
 
-        findTimes(firstArray);
+        Random random = new Random();
+        int[] array = new int[]{22, 18, 52, 15, 56, 68, 44, 31, 120, 47};
+        int key = array[random.nextInt(array.length)];
+        System.out.println("Task 2.1.\nBasic operations of the Arrays class.");
+        lastTime = System.nanoTime();
+        System.out.println("The resulting array: " + Arrays.toString(array));
+        int[] arrayCopy = Arrays.copyOf(array, array.length);
+        System.out.println("Copied array: " + Arrays.toString(arrayCopy));
+        System.out.println("The result of the binarySearch method: " + Arrays.binarySearch(array, key));
+        System.out.println("Outputting the result of the Arrays.equals method between the array and arrayCopy arrays: " + Arrays.equals(array, arrayCopy));
+        System.out.println("The execution time of the specified basic operations of the Arrays class took: " + (System.nanoTime() - lastTime) + " nanosecond\n");
 
-        linearSearch(firstArray, 154);
-        binarySearch(firstArray, 11);
+        lastTime = System.nanoTime();
+        System.out.println("Task 2.2.");
+        System.out.println("The result of the linearSearch method: " + linearSearch(array, key));
+        linearSearchTime = System.nanoTime() - lastTime;
+        System.out.println("The execution time of a linear search for a value (key) in an unsorted array took: " + linearSearchTime + " nanosecond");
+        lastTime = System.nanoTime();
+        System.out.println("The result of the binarySearch method: " + Arrays.binarySearch(array, key));
+        binarySearchTime = System.nanoTime() - lastTime;
+        System.out.println("Execution time of binary search for value (key) in unsorted array took: " + binarySearchTime + " nanosecond\n");
 
-        int[] secondArray = getArray(400);
+        int[] firstBigArray = new int[400];
+        for (int i = 0; i < firstBigArray.length; i++) {
+            firstBigArray[i] = random.nextInt(400);
+        }
+        int[] secondBigArray = firstBigArray.clone();
+        int[] thirdBigArray = firstBigArray.clone();
+        int[] fourthBigArray = firstBigArray.clone();
+        System.out.println("Task 2.3. \nCurrent array: " + Arrays.toString(firstBigArray));
+        lastTime = System.nanoTime();
+        Arrays.sort(firstBigArray);
+        methodSortTime = System.nanoTime() - lastTime;
+        System.out.println("Sorted array: " + Arrays.toString(firstBigArray));
+        System.out.println("The execution time of sorting the array using the sort() method took: " + methodSortTime + " nanosecond\n");
 
-        float methodSortTime = methodSort(secondArray);
-        float bubbleSortTime = bubbleSort(secondArray);
-        float selectionSortTime = selectionSort(secondArray);
-        float insertSortTime = insertSort(secondArray);
+        System.out.println("Task 2.4.\nCurrent array: " + Arrays.toString(secondBigArray));
+        lastTime = System.nanoTime();
+        bubbleSort(secondBigArray);
+        bubbleSortTime = System.nanoTime() - lastTime;
+        System.out.println("Sorted array: " + Arrays.toString(secondBigArray));
+        System.out.println("The bubble sort on secondBigArray took time: " + bubbleSortTime + " nanosecond");
+        System.out.println("Method sort " + (methodSortTime > bubbleSortTime ? "slower" : "faster") + " than bubble sort\n");
 
-        System.out.println("methodSort() " + (methodSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
-        System.out.println("selectionSort() " + (selectionSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
-        System.out.println("selectionSort() " + (selectionSortTime > methodSortTime ? "slower" : "faster") + " methodSort()");
-        System.out.println("insertSort() " + (insertSortTime > bubbleSortTime ? "slower" : "faster") + " bubbleSort()");
-        System.out.println("insertSort() " + (insertSortTime > methodSortTime ? "slower" : "faster") + " methodSort()");
-        System.out.println("insertSort() " + (insertSortTime > selectionSortTime ? "slower" : "faster") + " selectionSort()");
+        System.out.println("Задание 2.5. \nCurrent array: " + Arrays.toString(thirdBigArray));
+        lastTime = System.nanoTime();
+        selectionSort(thirdBigArray);
+        selectionSortTime = System.nanoTime() - lastTime;
+        System.out.println("Sorted array: " + Arrays.toString(thirdBigArray));
+        System.out.println("The selection sort on thirdBigArray took time: " + selectionSortTime + " nanosecond");
+        System.out.println("Selection sort " + (selectionSortTime > methodSortTime ? "slower" : "faster") + " than method sort");
+        System.out.println("Selection sort " + (selectionSortTime > bubbleSortTime ? "slower" : "faster") + " than bubble sort\n");
+
+        System.out.println("Задание 2.6. \nCurrent array: " + Arrays.toString(fourthBigArray));
+        lastTime = System.nanoTime();
+        insertionSort(fourthBigArray);
+        insertionSortTime = System.nanoTime() - lastTime;
+        System.out.println("Sorted array: " + Arrays.toString(fourthBigArray));
+        System.out.println("Insertion sort " + (insertionSortTime > bubbleSortTime ? "slower" : "faster") + " than bubble sort");
+        System.out.println("Insertion sort " + (insertionSortTime > methodSortTime ? "slower" : "faster") + " than method sort");
+        System.out.println("Insertion sort " + (insertionSortTime > selectionSortTime ? "slower" : "faster") + " than selection sort\n");
+
+        System.out.println("Nanosecond to second for bubble sort: " + ((double) bubbleSortTime / 1000000000.0));
+        System.out.println("Nanosecond to second for method sort: " + ((double) methodSortTime / 1000000000.0));
+        System.out.println("Nanosecond to second for selection sort: " + ((double) selectionSortTime / 1000000000.0));
+        System.out.println("Nanosecond to second for insertion sort: " + ((double) insertionSortTime / 1000000000.0));
+        System.out.println("Nanosecond to second for linear search: " + ((double) linearSearchTime / 1000000000.0));
+        System.out.println("Nanosecond to second for binary search: " + ((double) binarySearchTime / 1000000000.0));
     }
 
-    public static void findTimes(int[] array) {
-        start = System.nanoTime();
-        int[] newInts = Arrays.copyOf(array, array.length);
-        System.out.println("newInts = Arrays.copyOf(array, array.length) = " + (System.nanoTime() - start));
-
-        start = System.nanoTime();
-        System.out.print(Arrays.toString(array));
-        System.out.println(" - Arrays.toString(array) = " + (System.nanoTime() - start));
-
-        start = System.nanoTime();
-        Arrays.sort(array);
-        finish = (System.nanoTime() - start);
-        System.out.print(Arrays.toString(array));
-        System.out.println(" - Arrays.sort(array) = " + (System.nanoTime() - start));
-
-        start = System.nanoTime();
-        System.out.print(Arrays.binarySearch(array, 154) >= 0 ? "true" : "false");
-        System.out.println(" - Arrays.binarySearch(array, 3) = " + (System.nanoTime() - start));
-
-        start = System.nanoTime();
-        System.out.print(Arrays.equals(array, newInts) ? "true" : "false");
-        System.out.println(" - Arrays.equals(array, newInts) = " + (System.nanoTime() - start));
+    public static void bubbleSort(int[] array) {
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    sorted = false;
+                    int buff = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = buff;
+                }
+            }
+        }
     }
 
-    public static boolean linearSearch(int[] array, int a) {
-        start = System.nanoTime();
-        for (int j : array) {
-            if (j == a) {
-                System.out.println("linearSearch(int[] array, int a) = " + (System.nanoTime() - start) * 0.000000001F);
+    public static boolean linearSearch(int[] array, int key) {
+        for (int value : array) {
+            if (value == key) {
                 return true;
             }
         }
         return false;
     }
 
-    public static int binarySearch(int[] array, int a) {
-        start = System.nanoTime();
-        int firstIndex = 0;
-        int lastIndex = array.length - 1;
-        while (firstIndex <= lastIndex) {
-            int middleIndex = (firstIndex + lastIndex) / 2;
-            if (array[middleIndex] == a) {
-                System.out.println("binarySearch(int[] array, int a) = " + (System.nanoTime() - start) * 0.000000001F);
-                return middleIndex;
-            } else if (array[middleIndex] < a) {
-                firstIndex = middleIndex + 1;
-            } else if (array[middleIndex] > a) {
-                lastIndex = middleIndex - 1;
-            }
-        }
-        return -1;
-    }
-
-    private static float methodSort(int[] array) {
-        int[] integers = array.clone();
-        start = System.nanoTime();
-        Arrays.sort(integers);
-        finish = (System.nanoTime() - start);
-        System.out.println("methodSort result: " + Arrays.toString(integers));
-        System.out.println("methodSort = " + (System.nanoTime() - finish) * 0.000000001F);
-        return finish;
-    }
-
-    public static float bubbleSort(int[] array) {
-        int[] cloneArray = array.clone();
-        start = System.nanoTime();
-        for (int i = 0; i < cloneArray.length - 1; i++) {
-            for (int j = 0; j < cloneArray.length - i - 1; j++) {
-                if (cloneArray[j] > cloneArray[j + 1]) {
-                    swap(cloneArray, j, j + 1);
-                }
-            }
-        }
-        finish = (System.nanoTime() - start);
-        System.out.println("bubbleSort result: " + Arrays.toString(cloneArray));
-        System.out.println("bubbleSort = " + finish * 0.000000001F);
-        return finish;
-    }
-
-    private static void swap(int[] a, int first, int last) {
-        int buff = a[first];
-        a[first] = a[last];
-        a[last] = buff;
-    }
-
-    public static float selectionSort(int[] array) {
-        int[] integers = array.clone();
-        start = System.nanoTime();
-        for (int i = 0; i < integers.length; i++) {
+    public static void selectionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
             int min = i;
-            for (int j = i + 1; j < integers.length; j++) {
-                if (integers[j] < integers[min]) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min]) {
                     min = j;
                 }
             }
-            swap(integers, i, min);
+            int buff = array[i];
+            array[i] = array[min];
+            array[min] = buff;
         }
-        finish = (System.nanoTime() - start);
-        System.out.println("selectionSort result: " + Arrays.toString(integers));
-        System.out.println("selectionSort = " + finish);
-        return finish;
     }
 
-    public static float insertSort(int[] array) {
-        int[] integers = array.clone();
+    public static void insertionSort(int[] array) {
         int buff;
         int in;
-        start = System.nanoTime();
-        for (int i = 1; i < integers.length; i++) {
-            buff = integers[i];
+        for (int i = 1; i < array.length; i++) {
+            buff = array[i];
             in = i;
-            while (in > 0 && integers[in - 1] >= buff) {
-                integers[in] = integers[in - 1];
-                --in;
+            while (in > 0 && array[in - 1] >= buff) {
+                array[in] = array[in - 1];
+                in--;
             }
-            integers[in] = buff;
+            array[in] = buff;
         }
-        finish = (System.nanoTime() - start);
-        System.out.println("insertSort result: " + Arrays.toString(integers));
-        System.out.println("insertSort = " + finish);
-        return finish;
-    }
-
-    private static int[] getArray(int n) {
-        Random random = new Random();
-        int[] array = new int[n];
-        for (int i = 0; i < array.length - 1; i++) {
-            array[i] = random.nextInt(n);
-        }
-        return array;
     }
 }
