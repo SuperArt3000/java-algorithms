@@ -25,11 +25,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /* Задание 1.1
-        Приведите пример алгоритмов и структур данных из жизни.
-        Задание 1.2
-        Приведите пример алгоритмов и структур данных в программировании.
-        Задание 1.3
+        /* Задание 1.3
         Напишите программный код, в котором все данные хранятся только в переменных трех типов данных:
         Ссылочные, примитивные и своего класса содержащего: конструктор и метод отображения данных.
         Выведите написанные данные.
@@ -45,6 +41,6 @@ public class Main {
         System.out.println(reference);
 
         System.out.println(isEquals(main.getI(), primitive, reference));
-        System.out.println((System.nanoTime() - lastTime) * 0.000000001F);
+        System.out.println((System.nanoTime() - lastTime));
     }
 }
