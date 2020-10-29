@@ -20,6 +20,9 @@ public class Main {
 
         long lastTime;
 
+        // Задание 6.1: Приведите пример использования древовидной структуры.
+        // Ответ: файловая структура компьютера
+
         Tree tree = new Tree();
         tree.insert(new Person(1, "Lex", 23));
         tree.insert(new Person(2, "Ivan", 52));
