@@ -26,10 +26,14 @@ public class Main {
         graph.addVertex('C');
         graph.addVertex('D');
         graph.addVertex('E');
+        graph.addVertex('F');
+        graph.addVertex('G');
         graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
+        graph.addEdge(0, 2);
         graph.addEdge(0, 3);
-        graph.addEdge(3, 4);
+        graph.addEdge(1, 4);
+        graph.addEdge(3, 5);
+        graph.addEdge(4, 6);
         System.out.print("The output of the vertex at index 3: ");
         graph.displayVertex(3);
 

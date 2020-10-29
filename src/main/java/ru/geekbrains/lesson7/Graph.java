@@ -46,7 +46,7 @@ class Graph {
 
     public int getAdjUnvisitedVertex(int ver) {
         for (int i = 0; i < size; i++) {
-            if (adjMat[ver][i] == 1 && !vertexList[i].wasVisited) {
+            if (adjMat[ver][i] == 1 && vertexList[i].wasVisited == false) {
                 return i;
             }
         }
