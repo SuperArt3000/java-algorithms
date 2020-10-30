@@ -3,9 +3,6 @@ package ru.geekbrains.lesson7;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Для заданий 7.2, 7.3 и 7.4
- */
 class Vertex {
     public char label;
     public boolean wasVisited;
@@ -16,9 +13,6 @@ class Vertex {
     }
 }
 
-/**
- * Для заданий 7.2, 7.3 и 7.4
- */
 class Graph {
     private final int MAX_VERTICES = 32;
     private Vertex[] vertexList;

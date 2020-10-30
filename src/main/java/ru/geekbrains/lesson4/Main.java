@@ -79,9 +79,6 @@ public class Main {
         System.out.println("delete from myQueue\nThe execution time of these operations took: " + (System.nanoTime() - lastTime) + " nanosecond");
     }
 
-    /**
-     * Задания 4.5
-     */
     static class Link {
         public int value;
 
@@ -96,9 +93,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задания 4.5
-     */
     static class SimpleLinkedList {
         public Link first;
 
@@ -131,9 +125,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задания 4.5
-     */
     static class SimpleStackList {
         private SimpleLinkedList list;
 
@@ -158,9 +149,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задания 4.5
-     */
     static class SimpleQueue {
         private SimpleLinkedList myQueue;
 

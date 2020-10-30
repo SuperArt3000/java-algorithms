@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson6;
 
-/**
- * Для заданий 6.2, 6.3, 6.4 и 6.5
- */
 class Node {
     public Person person;
     public Node leftChild;
@@ -13,11 +10,7 @@ class Node {
     }
 }
 
-/**
- * Для заданий 6.2, 6.3, 6.4 и 6.5
- */
 class Tree {
-
     private Node root;
 
     public void insert(Person person) {
@@ -179,7 +172,6 @@ class Tree {
         }
         return successor;
     }
-
 
     public void displayTree() {
         Node current = root;

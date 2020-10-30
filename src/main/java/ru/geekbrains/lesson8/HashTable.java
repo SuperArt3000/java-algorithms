@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson8;
 
-/**
- * Для заданий 8.4
- */
 class HashTable {
     private Item[] hashArr;
     private int arrSize;

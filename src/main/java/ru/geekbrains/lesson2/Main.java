@@ -89,9 +89,6 @@ public class Main {
         System.out.println("Nanosecond to second for binary search: " + ((double) binarySearchTime / 1000000000.0));
     }
 
-    /**
-     * Задание 2.4
-     */
     public static void bubbleSort(int[] array) {
         boolean sorted = false;
         while (!sorted) {
@@ -107,9 +104,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задание 2.2
-     */
     public static boolean linearSearch(int[] array, int key) {
         for (int value : array) {
             if (value == key) {
@@ -119,9 +113,6 @@ public class Main {
         return false;
     }
 
-    /**
-     * Задание 2.5
-     */
     public static void selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int min = i;
@@ -136,9 +127,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задание 2.6
-     */
     public static void insertionSort(int[] array) {
         int buff;
         int in;

@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson6;
 
-/**
- * Для заданий 6.6
- */
 class HeapSort {
     private static int heapSize;
 

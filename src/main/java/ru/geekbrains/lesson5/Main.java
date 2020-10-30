@@ -61,17 +61,11 @@ public class Main {
         System.out.println("The merge sort took time to complete: " + (System.nanoTime() - lastTime) + " nanosecond");
     }
 
-    /**
-     * Задание 5.2
-     */
     private static int recursionMethod(int i) {
         System.out.println(i++);
         return recursionMethod(i);
     }
 
-    /**
-     * Задание 5.2
-     */
     private static int recursionMethodWithExit(int i) {
         System.out.print(i++ + " ");
         if (i >= 20)
@@ -79,9 +73,6 @@ public class Main {
         return recursionMethodWithExit(i);
     }
 
-    /**
-     * Задание 5.4
-     */
     private static void simpleRecursion(int i) {
         simpleRecursionArray[counter++] = i;
         if (counter == 10)
@@ -89,18 +80,12 @@ public class Main {
         simpleRecursion(++i);
     }
 
-    /**
-     * Задание 5.4
-     */
     private static void simpleCycle() {
         for (int i = 0; i < 10; i++) {
             simpleCycleArray[i] = i + 5;
         }
     }
 
-    /**
-     * Задание 5.5
-     */
     public static int recursionBinarySearch(int searchKey, int low, int high, int[] arr) {
         if (low > high) {
             return arr.length;
@@ -115,9 +100,6 @@ public class Main {
         }
     }
 
-    /**
-     * Задание 5.6
-     */
     public static int[] sortMerge(int[] arr) {
         int length = arr.length;
         if (length < 2) {
