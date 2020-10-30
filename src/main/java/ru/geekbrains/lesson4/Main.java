@@ -2,26 +2,14 @@ package ru.geekbrains.lesson4;
 
 import java.util.*;
 
+/**
+ * Java Algorithms. Interactive course. Lesson 4
+ *
+ * @author Nika Zurbaevi
+ * @version dated October 28, 2020
+ */
 public class Main {
     public static void main(String[] args) {
-
-        /* Задание 4.1
-        На основе данных объектного списка из задания 3.4 реализуйте простой стек и его базовые методы.
-        Оцените время выполнения операций с помощью базового метода System.nanoTime().
-        Задание 4.2
-        На основе данных объектного списка из задания 3.4 реализуйте простую очередь и его базовые методы.
-        Реализуйте вспомогательные методы.
-        Оцените время выполнения операций с помощью базового метода System.nanoTime().
-        Задание 4.3
-        На основе данных объектного списка из задания 3.4 реализуйте простой дек и его базовые методы.
-        Оцените время выполнения операций с помощью базового метода System.nanoTime().
-        Задание 4.4
-        Реализуйте приоритетную очередь на основе ссылочных типов данных, например, integer.
-        Оцените время выполнения операций с помощью базового метода System.nanoTime().
-        Задание 4.5
-        На основе данных из задания 4.1 и 4.2, реализуйте стек и очередь на базе связанного списка.
-        Оцените время выполнения операций с помощью базового метода System.nanoTime(). */
-
         long lastTime;
 
         System.out.print("Task 4.1.\nPopulating Stack from LinkedList: ");
@@ -91,6 +79,9 @@ public class Main {
         System.out.println("delete from myQueue\nThe execution time of these operations took: " + (System.nanoTime() - lastTime) + " nanosecond");
     }
 
+    /**
+     * Задания 4.5
+     */
     static class Link {
         public int value;
 
@@ -105,6 +96,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задания 4.5
+     */
     static class SimpleLinkedList {
         public Link first;
 
@@ -137,6 +131,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задания 4.5
+     */
     static class SimpleStackList {
         private SimpleLinkedList list;
 
@@ -161,6 +158,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задания 4.5
+     */
     static class SimpleQueue {
         private SimpleLinkedList myQueue;
 

@@ -1,5 +1,8 @@
 package ru.geekbrains.lesson8;
 
+/**
+ * Для заданий 8.4
+ */
 class Item {
     private int data;
 

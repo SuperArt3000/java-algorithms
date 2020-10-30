@@ -1,19 +1,13 @@
 package ru.geekbrains.lesson7;
 
+/**
+ * Java Algorithms. Interactive course. Lesson 5
+ *
+ * @author Nika Zurbaevi
+ * @version dated October 30, 2020
+ */
 public class Main {
     public static void main(String[] args) {
-
-        /* Задание 7.1
-        Приведите пример графа.
-        Задание 7.2
-        Реализуйте базовые методы графа.
-        Задание 7.3
-        В программный код из задания 7.2 добавьте реализацию метода обхода в глубину.
-        Выполните оценку времени с помощью System.nanoTime().
-        Задание 7.4
-        В базовом графе из задания 7.2 реализуйте метод обхода в ширину.
-        Выполните оценку времени с помощью System.nanoTime(). */
-
         long lastTime;
 
         // Задание 7.1: Приведите пример графа.

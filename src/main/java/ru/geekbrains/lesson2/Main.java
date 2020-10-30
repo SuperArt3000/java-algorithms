@@ -3,34 +3,14 @@ package ru.geekbrains.lesson2;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Java Algorithms. Interactive course. Lesson 2
+ *
+ * @author Nika Zurbaevi
+ * @version dated October 22, 2020
+ */
 public class Main {
     public static void main(String[] args) {
-
-        /* Задание 2.1
-        На основе программного кода из домашнего задания №1 реализуйте массив на основе существующих примитивных или ссылочных типов данных.
-        Выполните обращение к массиву и базовые операции класса Arrays.
-        Оценить выполненные методы с помощью базового класса System.nanoTime().
-        Задание 2.2
-        На основе написанного кода в задании 2.1 реализуйте линейный и двоичный поиск.
-        Оценить алгоритмы линейного и двоичного поиска с помощью базового класса System.nanoTime(),
-        при необходимости расширьте уже существующий массив данных.
-        Задание 2.3
-        Создайте массив размером 400 элементов.
-        Выполните сортировку с помощью метода sort().
-        Оцените сортировку с помощью базового класса System.nanoTime().
-        Задание 2.4
-        На основе существующего массива данных из задания 2.3 реализуйте алгоритм сортировки пузырьком.
-        Оцените сортировку с помощью базового класса System.nanoTime().
-        Сравните время выполнения алгоритмы сортировки методом sort() из задания 2.1 и сортировку пузырьком.
-        Задание 2.5
-        На основе массива данных из задания 2.3 реализуйте алгоритм сортировки методом выбора.
-        Оцените сортировку с помощью базового класса System.nanoTime().
-        Сравните с временем выполнения алгоритмов сортировки из прошлых заданий 2.3 и 2.4.
-        Задание 2.6
-        На основе массива данных из задания 2.3 реализуйте алгоритм сортировки методом вставки.
-        Оцените сортировку с помощью базового класса System.nanoTime().
-        Сравните с временем выполнения алгоритмов сортировки из прошлых заданий 2.3, 2.4 и 2.5. */
-
         long lastTime;
         long bubbleSortTime;
         long insertionSortTime;
@@ -83,7 +63,7 @@ public class Main {
         System.out.println("The bubble sort on secondBigArray took time: " + bubbleSortTime + " nanosecond");
         System.out.println("Method sort " + (methodSortTime > bubbleSortTime ? "slower" : "faster") + " than bubble sort\n");
 
-        System.out.println("Задание 2.5. \nCurrent array: " + Arrays.toString(thirdBigArray));
+        System.out.println("Task 2.5. \nCurrent array: " + Arrays.toString(thirdBigArray));
         lastTime = System.nanoTime();
         selectionSort(thirdBigArray);
         selectionSortTime = System.nanoTime() - lastTime;
@@ -92,7 +72,7 @@ public class Main {
         System.out.println("Selection sort " + (selectionSortTime > methodSortTime ? "slower" : "faster") + " than method sort");
         System.out.println("Selection sort " + (selectionSortTime > bubbleSortTime ? "slower" : "faster") + " than bubble sort\n");
 
-        System.out.println("Задание 2.6. \nCurrent array: " + Arrays.toString(fourthBigArray));
+        System.out.println("Task 2.6. \nCurrent array: " + Arrays.toString(fourthBigArray));
         lastTime = System.nanoTime();
         insertionSort(fourthBigArray);
         insertionSortTime = System.nanoTime() - lastTime;
@@ -109,6 +89,9 @@ public class Main {
         System.out.println("Nanosecond to second for binary search: " + ((double) binarySearchTime / 1000000000.0));
     }
 
+    /**
+     * Задание 2.4
+     */
     public static void bubbleSort(int[] array) {
         boolean sorted = false;
         while (!sorted) {
@@ -124,6 +107,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задание 2.2
+     */
     public static boolean linearSearch(int[] array, int key) {
         for (int value : array) {
             if (value == key) {
@@ -133,6 +119,9 @@ public class Main {
         return false;
     }
 
+    /**
+     * Задание 2.5
+     */
     public static void selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int min = i;
@@ -147,6 +136,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задание 2.6
+     */
     public static void insertionSort(int[] array) {
         int buff;
         int in;

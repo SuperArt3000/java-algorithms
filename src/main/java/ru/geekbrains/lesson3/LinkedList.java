@@ -1,5 +1,8 @@
 package ru.geekbrains.lesson3;
 
+/**
+ * Class Link
+ */
 class Link<T> {
     private T link;
     private Link<T> next;
@@ -21,6 +24,9 @@ class Link<T> {
     }
 }
 
+/**
+ * Class LinkedList
+ */
 public class LinkedList<T> {
     private Link<T> first;
 

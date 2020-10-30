@@ -2,29 +2,18 @@ package ru.geekbrains.lesson5;
 
 import java.util.Arrays;
 
+/**
+ * Java Algorithms. Interactive course. Lesson 5
+ *
+ * @author Nika Zurbaevi
+ * @version dated October 24, 2020
+ */
 public class Main {
     private static final int[] simpleRecursionArray = new int[10];
     private static final int[] simpleCycleArray = new int[10];
     private static int counter = 0;
 
     public static void main(String[] args) {
-
-        /* Задание 5.1
-        Приведите пример использования рекурсии.
-        Задание 5.2
-        Реализуйте простой пример бесконечной рекурсии и обычной рекурсии с условием для выхода.
-        Задание 5.3
-        Приведите пример изображающий стек вызова и стек вызова с рекурсией.
-        Задание 5.4
-        Реализуйте простой алгоритм использующий цикл и простой алгоритм использующий рекурсию.
-        Оцените два алгоритма с помощью базового метода System.nanoTime().
-        Задание 5.5
-        Реализуйте алгоритм двоичного рекурсивного поиска на основе массива из задания 2.1.
-        Оцените алгоритм двоичного рекурсивного поиска с помощью базового метода System.nanoTime() и сравните с обычным двоичным поиском.
-        Задание 5.6
-        На основе массива из задания 2.1 реализуйте алгоритм сортировки слиянием.
-        Оцените алгоритм сортировки слиянием с помощью базового метода System.nanoTime() и сравните с сортировкой методом sort(). */
-
         long lastTime;
 
         // Задание 5.1: Приведите пример использования рекурсии.
@@ -72,11 +61,17 @@ public class Main {
         System.out.println("The merge sort took time to complete: " + (System.nanoTime() - lastTime) + " nanosecond");
     }
 
+    /**
+     * Задание 5.2
+     */
     private static int recursionMethod(int i) {
         System.out.println(i++);
         return recursionMethod(i);
     }
 
+    /**
+     * Задание 5.2
+     */
     private static int recursionMethodWithExit(int i) {
         System.out.print(i++ + " ");
         if (i >= 20)
@@ -84,6 +79,9 @@ public class Main {
         return recursionMethodWithExit(i);
     }
 
+    /**
+     * Задание 5.4
+     */
     private static void simpleRecursion(int i) {
         simpleRecursionArray[counter++] = i;
         if (counter == 10)
@@ -91,12 +89,18 @@ public class Main {
         simpleRecursion(++i);
     }
 
+    /**
+     * Задание 5.4
+     */
     private static void simpleCycle() {
         for (int i = 0; i < 10; i++) {
             simpleCycleArray[i] = i + 5;
         }
     }
 
+    /**
+     * Задание 5.5
+     */
     public static int recursionBinarySearch(int searchKey, int low, int high, int[] arr) {
         if (low > high) {
             return arr.length;
@@ -111,6 +115,9 @@ public class Main {
         }
     }
 
+    /**
+     * Задание 5.6
+     */
     public static int[] sortMerge(int[] arr) {
         int length = arr.length;
         if (length < 2) {
@@ -121,7 +128,7 @@ public class Main {
                 sortMerge(Arrays.copyOfRange(arr, middle, length)));
     }
 
-    public static int[] merge(int[] a, int[] b) {
+    private static int[] merge(int[] a, int[] b) {
         int[] result = new int[a.length + b.length];
         int aIndex = 0;
         int bIndex = 0;
