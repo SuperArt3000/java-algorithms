@@ -3,7 +3,7 @@ package ru.geekbrains.lesson8;
 import java.util.Random;
 
 /**
- * Java Algorithms. Interactive course. Lesson 5
+ * Java Algorithms. Interactive course. Lesson 8
  *
  * @author Nika Zurbaevi
  * @version dated October 31, 2020

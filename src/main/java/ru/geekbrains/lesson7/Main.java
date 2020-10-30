@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson7;
 
 /**
- * Java Algorithms. Interactive course. Lesson 5
+ * Java Algorithms. Interactive course. Lesson 7
  *
  * @author Nika Zurbaevi
  * @version dated October 30, 2020

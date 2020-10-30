@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Java Algorithms. Interactive course. Lesson 5
  *
  * @author Nika Zurbaevi
- * @version dated October 24, 2020
+ * @version dated October 26, 2020
  */
 public class Main {
     private static final int[] simpleRecursionArray = new int[10];
