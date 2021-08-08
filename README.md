@@ -1,4 +1,5 @@
 ____
+
 # Практикум на GeekBrains
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
 
@@ -14,4 +15,5 @@ ____
 * [Урок 7.](https://github.com/zurbaevi/Java-algorithms.-Interactive-course/tree/main/src/main/java/ru/geekbrains/lesson7) Графы
 * [Урок 8.](https://github.com/zurbaevi/Java-algorithms.-Interactive-course/tree/main/src/main/java/ru/geekbrains/lesson8) Хеш-таблицы
 #### [Сертификат](https://geekbrains.ru/certificates/1008723)
+
 ____
